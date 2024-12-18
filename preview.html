@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Preview</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #ff758c, #ff7eb3);
+            color: #fff;
+            text-align: center;
+        }
+        header {
+            padding: 30px 20px;
+        }
+        header h1 {
+            font-size: 2.5em;
+        }
+        .card-preview {
+            margin: 20px auto;
+            width: 90%;
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        .card {
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        .card h2 {
+            font-size: 1.8em;
+            color: #ff4a4a;
+            margin-bottom: 10px;
+        }
+        .card p {
+            font-size: 1.2em;
+            color: #444;
+        }
+        .card .theme {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 0.9em;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 8px;
+        }
+        .back-button, .download-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #00c6ff, #0072ff);
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1em;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+        .back-button:hover, .download-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.4);
+        }
+        footer {
+            margin-top: 30px;
+            padding: 20px;
+            font-size: 0.9em;
+            background: rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🎄 Your Christmas Card Preview 🎁</h1>
+    </header>
+    <main>
+        <section class="card-preview">
+            <div class="card">
+                <div class="theme" id="themes">Theme: [Selected Theme]</div>
+                <h2 id="recipient">To: [Recipient's Name]</h2>
+                <p id="message">"[Your Message]"</p>
+                <p>With Love, <strong>Your Name</strong></p>
+            </div>
+        </section>
+        <a href="create.html" class="back-button">← Back to Edit</a>
+        <button class="download-button" onclick="alert('Feature coming soon!')">Download Card</button>
+    </main>
+    <footer>
+        <p>&copy; 2024 Christmas Card Creator</p>
+    </footer>
+    <script>
+        let params = new URL(document.location.toString()).searchParams;
+        document.getElementById("themes").innerHTML = params.get("theme");
+        document.getElementById("recipient").innerHTML = params.get("recipient");
+        document.getElementById("message").innerHTML = params.get("message");
+    </script>
+</body>
+</html>

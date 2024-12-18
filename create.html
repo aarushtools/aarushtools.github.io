@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Card</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #4facfe, #00f2fe);
+            color: #fff;
+            text-align: center;
+        }
+        header {
+            padding: 40px 20px;
+        }
+        header h1 {
+            font-size: 2.5em;
+        }
+        form {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        form label {
+            display: block;
+            margin-top: 15px;
+            text-align: left;
+            font-weight: bold;
+        }
+        form input, form textarea, form select {
+            width: 100%;
+            margin-top: 5px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            font-size: 1em;
+        }
+        form button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #00c6ff, #0072ff);
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+        form button:hover {
+            transform: translateY(-3px);
+            box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🎄 Create Your Christmas Card 🎁</h1>
+    </header>
+    <main>
+        <form action="preview.html">
+            <label for="recipient">Recipient's Name:</label>
+            <input type="text" id="recipient" name="recipient" placeholder="e.g., John Doe" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" placeholder="Write a festive message..." required></textarea>
+            
+            <label for="theme">Card Theme:</label>
+            <select id="theme" name="theme">
+                <option value="snow">Snowy Night</option>
+                <option value="tree">Christmas Tree</option>
+                <option value="reindeer">Reindeer Sleigh</option>
+            </select>
+            
+            <button type="submit">Preview Card</button>
+        </form>
+    </main>
+</body>
+</html>
